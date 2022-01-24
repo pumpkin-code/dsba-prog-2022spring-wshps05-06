@@ -32,8 +32,34 @@
 
 #include <iostream>
 #include <string>           // изначально нет
+#include <cstdlib>
+
+
+using std::string;
+using std::cin;
 
 int main()
 {
+    string s1, s2;
+    cin >> s1 >> s2;
+
+//    // c-style approach
+//    int i = atoi(s1.c_str());
+//    double d = atof(s2.c_str());
+
+    int i = std::stoi(s1);
+    double d = std::stod(s2);
+
+    std::cout << i << d;
+//    i;
+//    d;
+
+    // make a string representation for numbers
+    s1 = std::to_string(42);
+    s2 = std::to_string(3.14);
+
+    string resStr = s1 + ", " + s2;     // it works, don't use it in practice,
+                                        // prefer using std::stringstream helper class instead
+
     return 0;
 }

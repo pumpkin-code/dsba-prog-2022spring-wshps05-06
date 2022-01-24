@@ -23,11 +23,33 @@
 #include <iostream>
 #include <cmath>            // HINT: library for some math functions
 
+
 // HINT: use the using statement in make it shorter refererring to std::cout
 // and std::cin.
 
+using std::cin;            // now we can use cin w/o std:: prefix
+using std::cout;
+
+
 int main()
 {
-    // TODO:
+    //const unsigned int n = 42;        // we can't use const if we want to read anything
+    size_t n;                   // we'll store a number of pairs here (unsigned integer)
+    cin >> n;
+
+    double sum = 0;               // we must initialize it, sinc we will add new sum components
+    for (size_t i = 0; i < n; ++i)
+    {
+        double x, y;
+        cin >> x >> y;
+        sum += pow(x, y);
+    }
+
+    if (n) // n != 0
+        cout << sum / n;
+    else
+        cout << "NaN";
+
+
     return 0;
 }

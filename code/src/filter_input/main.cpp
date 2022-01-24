@@ -22,7 +22,19 @@
 
 #include <iostream>
 
+using std::cout;
+using std::cin;
+
 int main()
 {
+
+    double num;
+    while (cin >> num &&
+           !cin.eof())    // == cin.good()
+    {
+        if (num >= 0)        // in programming 0 is positive))
+            cout << num << "\n";
+    }
+
     return 0;
 }
