@@ -22,7 +22,23 @@
 
 #include <iostream>
 
+using std::cin;
+using std::cout;
+
+
 int main()
-{
+{    
+    double num;
+    //cin >> num;
+    while (cin >> num &&
+           !cin.eof())    // cin.good()
+    {
+        if (num >= 0)           // some programmers say that 0 is a positive number, in fact
+            cout << num << "\n";
+        //cin >> num;           // we have to repeat reading if we get rid of >> operation in the head of the while loop
+    }
+
+    int a = 0;
+
     return 0;
 }

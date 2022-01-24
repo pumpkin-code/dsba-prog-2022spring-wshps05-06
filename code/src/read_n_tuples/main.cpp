@@ -23,11 +23,34 @@
 #include <iostream>
 #include <cmath>            // HINT: library for some math functions
 
+
 // HINT: use the using statement in make it shorter refererring to std::cout
 // and std::cin.
 
+using std::cin;                 // visibility of the shortcut is all below this line
+
+
 int main()
 {
-    // TODO:
+    using std::cout;            // visibility of the shortcut is limited by the body of main function
+
+    size_t n;     // unsigned int
+    cin >> n;
+
+    double sum = 0;         // accumulating a sum
+    for (size_t i = 0; i < n; ++i)
+    {
+        double x, y;
+        cin >> x >> y;
+        double res = pow(x, y);
+        sum += res;                 // sum += pow(x, y)
+    }
+
+    if (n)      // n != 0
+        cout << sum / n;
+    else
+        cout << "NaN";
+
+
     return 0;
 }

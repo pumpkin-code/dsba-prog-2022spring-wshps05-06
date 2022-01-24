@@ -31,9 +31,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-#include <string>           // изначально нет
+#include <string>
+#include <cstdlib>
+
 
 int main()
 {
+    using std::string;
+    using std::cin;
+
+    string s1, s2;
+    cin >> s1 >> s2;
+
+//    int i = atoi(s1.c_str());
+//    double d = atof(s2.c_str());
+
+    int i = std::stoi(s1);
+    double d = std::stod(s2);
+
+
+    s1 = std::to_string(42);
+    s2 = std::to_string(2.8);
+
+
     return 0;
 }
